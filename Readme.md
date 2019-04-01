@@ -1,7 +1,7 @@
 # Личный проект «Мишка» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Виктория Низаева](https://up.htmlacademy.ru/adaptive/16/user/870965).
-* Наставник: `Неизвестно`.
+* Наставник: [Николай Думчев] (https://htmlacademy.ru/profile/nikopol_fw).
 
 ---
 
