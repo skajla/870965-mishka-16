@@ -21,9 +21,9 @@
     </header>
 
     <main class="page-main">
-      <h1 class="form__title">Вязание на заказ</h1>
-      <p class="form__description">Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.</p>
-      <form class="form" action="https://echo.htmlacademy.ru" method="post">
+      <h1 class="order-title">Вязание на заказ</h1>
+      <form class="form" action="https://echo.htmlacademy.ru" method="post"></form>
+        <p class="form__description">Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.</p>
         <fieldset class="form__filter form__filter--type">
           <legend class="filter-title">Тип</legend>
           <ul>
@@ -83,38 +83,40 @@
           </ul>
         </fieldset>
 
-        <p class="filter-title">ФИО</p>
-        <p class="form__text">
-          <label>
-            Имя:
-            <input type="text" name="name" value="" placeholder="Введите ваше имя*" required>
-          </label>
-        </p>
-        <p class="form__text">
-          <label>
-            Фамилия:
-            <input type="text" name="surname" value="" placeholder="Укажите фамилию*" required>
-          </label>
-        </p>
-        <p class="form__text">
-          <label>
-            Отчество:
-            <input type="text" name="patronymic" value="" placeholder="Отчество, если желаете">
-          </label>
-        </p>
-        <p class="filter-title">Тел</p>
+        <fieldset class="form__user-info">
+          <legend class="filter-title">ФИО</legend>
+          <p class="form__text">
+            <label>
+              Имя:
+              <input type="text" name="name" value="" placeholder="Введите ваше имя*" required>
+            </label>
+          </p>
+          <p class="form__text">
+            <label>
+              Фамилия:
+              <input type="text" name="surname" value="" placeholder="Укажите фамилию*" required>
+            </label>
+          </p>
+          <p class="form__text">
+            <label>
+              Отчество:
+              <input type="text" name="patronymic" value="" placeholder="Отчество, если желаете">
+            </label>
+          </p>
+        </fieldset>
+        <h3 class="filter-title">Тел</h3>
         <p class="form__text">
           <label>
             <input type="tel" name="phone" value="" placeholder="+7 XXX XXX XX XX*" required>
           </label>
         </p>
-        <p class="filter-title">E-mail</p>
+        <h3 class="filter-title">E-mail</h3>
         <p class="form__text">
           <label>
             <input type="email" name="e-mail" value="" placeholder="Ваш Email*" required>
           </label>
         </p>
-        <p class="filter-title">Доп</p>
+        <h3 class="filter-title">Доп</h3>
         <textarea type="text" name="comments" value="" placeholder="Опишите все ваши пожелания к заказу"></textarea>
         <p>*Поля обязательны для заполнения</p>
         <button type="submit">Отправить заказ</button>
@@ -143,7 +145,7 @@
       </div>
       <div class="footer-copyright">
         <p class="footer-copyright__text">Разработано:</p>
-        <a class="footer-copyright__link" href="https://htmlacademy.ru/intensive/adaptive" target="blank">HTML Academy</a>
+        <a class="footer-copyright__link" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">HTML Academy</a>
       </div>
     </footer>
   </body>
