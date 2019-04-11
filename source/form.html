@@ -3,37 +3,38 @@
   <head>
     <meta charset="utf-8">
     <title>Вязание на заказ</title>
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
     <header class="page-header">
       <a class="page-header__logo" href="index.html">
-        <img class="page-header__logo-image" src="#" width="86" height="35" alt="Логотип интернет-магазина «Mishka»">
+        <img class="page-header__logo-image" src="img/logo-mobile.svg" width="86" height="35" alt="Логотип интернет-магазина «Mishka»">
       </a>
       <button class="page-header__toggle" type="button">Открыть меню</button>
       <nav class="main-nav">
-        <ul class="main-nav__list site-list">
-          <li class="site-list__item"><a href="catalog.html">Каталог товаров</a></li>
-          <li class="site-list__item"><a href="form.html">Вязание на заказ</a></li>
-          <li class="site-list__item site-list__item--search"><a href="#">Поиск по сайту</a></li>
-          <li class="site-list__item site-list__item--cart"><a href="#">Корзина: пока пуста</a></li>
+        <ul class="main-nav__list nav-list">
+          <li class="nav-list__item"><a class="nav-list__link" href="catalog.html">Каталог товаров</a></li>
+          <li class="nav-list__item"><a class="nav-list__link" href="form.html">Вязание на заказ</a></li>
+          <li class="nav-list__item nav-list__item--search"><a class="nav-list__link" href="#">Поиск по сайту</a></li>
+          <li class="nav-list__item nav-list__item--cart"><a class="nav-list__link" href="#">Корзина: пока пуста</a></li>
         </ul>
       </nav>
     </header>
 
     <main class="page-main">
       <h1 class="order-title">Вязание на заказ</h1>
-      <form class="form" action="https://echo.htmlacademy.ru" method="post"></form>
+      <form class="form" action="https://echo.htmlacademy.ru" method="post">
         <p class="form__description">Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму заказа и мы свяжемся с вами, чтобы уточнить детали.</p>
         <fieldset class="form__filter form__filter--type">
           <legend class="filter-title">Тип</legend>
-          <ul>
-            <li class="filter-type-option">
+          <ul class="form__filter-list">
+            <li class="form__filter-list--item filter-type">
               <label>
                 <input class="visually-hidden filter-input-radio" type="radio" name="option-1" id="filter-accessory" value="accessory" checked>
                 Аксессуар для интерьера
               </label>
             </li>
-            <li class="filter-type-option">
+            <li class="form__filter-list--item filter-type">
               <label>
                 <input class="visually-hidden filter-input-radio" type="radio" name="option-1" id="filter-toy" value="toy">
                 Детская игрушка
@@ -43,38 +44,38 @@
         </fieldset>
         <fieldset class="form__filter form__filter--color">
           <legend class="filter-title">Цвет</legend>
-          <ul>
-            <li class="filter-color-option">
+          <ul class="form__filter-list">
+            <li class="form__filter-list--item filter-color">
               <label>
                 <input class="visually-hidden filter-input-checkbox" type="checkbox" name="option-1" id="filter-white" value="white" checked>
                 Белый
               </label>
             </li>
-            <li class="filter-color-option">
+            <li class="form__filter-list--item filter-color">
               <label>
                 <input class="visually-hidden filter-input-checkbox" type="checkbox" name="option-2" id="filter-grey" value="grey" checked>
                 Серый
               </label>
             </li>
-            <li class="filter-color-option">
+            <li class="form__filter-list--item filter-color">
               <label>
                 <input class="visually-hidden filter-input-checkbox" type="checkbox" name="option-3" id="filter-tiffany" value="tiffany">
                 «Тиффани»‎
               </label>
             </li>
-            <li class="filter-color-option">
+            <li class="form__filter-list--item filter-color">
               <label>
                 <input class="visually-hidden filter-input-checkbox" type="checkbox" name="option-4" id="filter-black" value="black">
                 Чёрный
               </label>
             </li>
-            <li class="filter-color-option">
+            <li class="form__filter-list--item filter-color">
               <label>
                 <input class="visually-hidden filter-input-checkbox" type="checkbox" name="option-5" id="filter-pink" value="pink">
                 Розовый
               </label>
             </li>
-            <li class="filter-color-option">
+            <li class="form__filter-list--item filter-color">
               <label>
                 <input class="visually-hidden filter-input-checkbox" type="checkbox" name="option-6" id="filter-orange" value="orange">
                 Оранжевый
@@ -118,8 +119,8 @@
         </p>
         <h3 class="filter-title">Доп</h3>
         <textarea type="text" name="comments" value="" placeholder="Опишите все ваши пожелания к заказу"></textarea>
-        <p>*Поля обязательны для заполнения</p>
-        <button type="submit">Отправить заказ</button>
+        <p class="form__required">*Поля обязательны для заполнения</p>
+        <button class="form__btn btn" type="submit">Отправить заказ</button>
       </form>
     </main>
 
@@ -127,17 +128,17 @@
       <div class="footer__social social">
         <ul class="social__list">
           <li class="social__item">
-            <a class="social__link social__link--instagram" href="#">Ig
+            <a class="social__link social__link--instagram" href="#">
               <span class="visually-hidden">«Mishka» в Инстаграм</span>
             </a>
           </li>
           <li class="social__item">
-            <a class="social__link social__link--facebook" href="#">Fb
+            <a class="social__link social__link--facebook" href="#">
               <span class="visually-hidden">«Mishka» в Фэйсбук</span>
             </a>
           </li>
           <li class="social__item">
-            <a class="social__link social__link--twitter" href="#">Tw
+            <a class="social__link social__link--twitter" href="#">
               <span class="visually-hidden">«Mishka» в Твиттер</span>
             </a>
           </li>
@@ -145,7 +146,9 @@
       </div>
       <div class="footer-copyright">
         <p class="footer-copyright__text">Разработано:</p>
-        <a class="footer-copyright__link" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">HTML Academy</a>
+        <a class="footer-copyright__link" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">
+          <span class="visually-hidden">Разработано HTML Academy</span>
+        </a>
       </div>
     </footer>
   </body>
