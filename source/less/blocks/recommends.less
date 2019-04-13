@@ -1,9 +1,18 @@
+.recommends__wrapper {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
 .recommends__title {
+  margin: 0;
+  margin-top: 60px;
+  margin-bottom: 38px;
+
   font-size: 25px;
   line-height: 30px;
 }
 
-.recommends__wrapper {
+.recommends__list {
   .reset;
 }
 
@@ -14,7 +23,11 @@
 }
 
 .recommends__author {
+  margin: 0;
+  margin-top: 40px;
+
   font-size: 17px;
+  font-weight: bold;
 }
 
 .recommends__nickname {
@@ -22,4 +35,41 @@
   line-height: 30px;
   color: #444444;
   font-weight: normal;
+}
+
+.recommends__slider--button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 36px;
+  margin-bottom: 38px;
+}
+
+.recommends__prev,
+.recommends__next {
+  display: block;
+  padding-top: 9px;
+  padding-right: 38px;
+  padding-bottom: 9px;
+  padding-left: 38px;
+
+  border: 1px solid #ececec;
+}
+
+.recommends__btn {
+  padding-top: 12px;
+  padding-right: 78px;
+  padding-bottom: 12px;
+  padding-left: 78px;
+
+  &:hover {
+    color: #ffffff;
+
+    background-color: #444444;
+  }
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+
+    background-color: #444444;
+  }
 }

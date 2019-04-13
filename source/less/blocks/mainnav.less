@@ -1,22 +1,18 @@
-/*@media (min-width: @tablet-width) {
-  .main-nav {
-    width: auto;
-    margin: 0;
-  }
-}
-
-@media (min-width: @desktop-width) {
-  .main-nav__wrapper {
-    width: 960px;
-  }
-*/
+/* mobile */
 
 .main-nav__list {
   .reset;
 }
 
-.main-nav__item--delivery {
+.main-nav__item--delivery,
+.main-nav__item--arrival,
+.main-nav__item--sale {
   display: none;
+}
+
+.page-header__wrapper {
+  margin: 0 auto;
+  width: 320px;
 }
 
 .main-nav {
@@ -30,11 +26,9 @@
 .main-nav__logo {
   display: block;
   height: 35px;
-  padding-left: 116px;
   padding-top: 22px;
+  padding-left: 116px;
   padding-bottom: 22px;
-
-  border-bottom: 1px solid #ececec;
 }
 
 .main-nav__logo img {
@@ -57,6 +51,7 @@
   font-size: 17px;
   line-height: 24px;
   color: #000000;
+
   &:hover {
     color: rgba(0, 0, 0, 0.6);
   }
@@ -147,101 +142,19 @@
   cursor: pointer;
 }
 
-
-
 @media (max-width: @mobile-width-only) {
-  .main-nav--closed .main-nav__list {
+  .main-nav--closed .main-nav__item {
     display: none;
   }
 }
 
-/*@media (min-width: @tablet-width) {
-  .main-nav__item--delivery {
-    display: block;
-  }
-
-  .main-nav {
-    min-width: 768px;
-  }
-
-  .main-nav__wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-
-    width: 768px;
-    margin: 0 auto;
-    padding-right: 50px;
-    padding-left: 50px;
-  }
-
-  .main-nav {
-    width: auto;
-    margin: 0;
-  }
-
-  .main-nav--closed .main-nav__toggle,
-  .main-nav--opened .main-nav__toggle {
-    display: none;
-  }
-
-  .main-nav__list {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 570px;
-  }
-
-  .main-nav__link {
-    display: block;
-    margin-top: 32px;
-    margin-bottom: 30px;
-    margin-left: 76px;
-
-    font-size: 17px;
-    line-height: 24px;
-    color: #000000;
-    &:hover {
-      color: rgba(0, 0, 0, 0.6);
-    }
-    &:active {
-      color: gba(0, 0, 0, 0.3);
-    }
-  }
-
-  .main-nav__logo {
-    height: 35px;
-    padding-left: 51px;
-    padding-right: 210px;
-  }
-
-  .main-nav__item--search {
-    order: 0;
-  }
-
-  .main-nav__item--cart {
-    order: 0;
-  }
-
-  .main-nav__item--catalog {
-    order: 1;
-  }
-
-  .main-nav__item--order {
-    order: 2;
-  }
-
-  .main-nav__item--delivery {
-    order: 3;
-  }
-
-  .main-nav__link {
-    .reset;
-  }
-}*/
+/* tablet */
 
 @media (min-width: @tablet-width) {
+  .main-nav__item--delivery {
+    display: block;
+  }
+
   .main-nav--closed .main-nav__toggle,
   .main-nav--opened .main-nav__toggle {
     display: none;
@@ -253,14 +166,20 @@
   }
 
   .main-nav {
+    position: relative;
+
+    width: 768px;
+    min-height: 79px;
+    margin: 0 auto;
+  }
+
+  .main-nav__list {
     display: flex;
     flex-direction: row;
-    width: 768px;
-    margin: 0;
+    flex-wrap: wrap;
   }
 
   .main-nav__logo {
-    display: flex;
     height: 46px;
     padding: 0;
     padding-top: 22px;
@@ -272,35 +191,14 @@
   }
 
   .main-nav__logo img {
-    width: 328px;
+    width: 112px;
     height: 46px;
   }
-
-  .main-nav__list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .main-nav__link {
-    display: flex;
-    flex-direction: row;
-  }
-
-  /*.main-nav__link {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }*/
 
   .main-nav__item--catalog {
     order: 1;
 
     border: none;
-  }
-
-  .main-nav__link--catalog {
-    display: flex;
   }
 
   .main-nav__item--order {
@@ -310,7 +208,6 @@
   }
 
   .main-nav__item--delivery {
-    display: block;
     order: 3;
 
     border: none;
@@ -318,23 +215,47 @@
 
   .main-nav__link--search {
     font-size: 0;
+    padding-left: 81px;
   }
 
   .main-nav__item--search {
-    width: 88px;
-    height: 87px;
-
-    border-bottom: 1px solid #ececec;
     border-left: 1px solid #ececec;
     border-right: 1px solid #ececec;
   }
 
-  .main-nav__item--cart {
-    border-bottom: 1px solid #ececec;
-  }
-
   .main-nav__link--cart {
-    padding-right: 52px;
+    padding-right: 55px;
   }
 
+  .main-nav__link--catalog,
+  .main-nav__link--order,
+  .main-nav__link--delivery {
+    padding-top: 25px;
+
+    font-size: 15px;
+  }
+
+  .main-nav__item--catalog,
+  .main-nav__item--order,
+  .main-nav__item--delivery {
+    background-color: #f9f9f9;
+  }
+
+  .main-nav__link--catalog {
+    padding-left: 52px;
+  }
+
+  .main-nav__link--order {
+    padding-left: 37px;
+  }
+
+  .main-nav__link--delivery {
+    padding-left: 134px;
+    padding-right: 46px;
+
+    font-weight: normal;
+    color: #444444;
+  }
 }
+
+/* desktop */
