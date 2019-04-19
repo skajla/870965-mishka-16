@@ -5,14 +5,18 @@
   color: #ffffff;
 }
 
-.categories__item--interior,
-.categories__item--toys {
+.categories__item {
   position: relative;
 
   padding-top: 28px;
+  padding-right: 185px;
   padding-bottom: 28px;
   padding-left: 30px;
-  padding-right: 185px;
+}
+
+.categories__link {
+  display: block;
+  width: 70px;
 }
 
 .categories__icon--interior,
@@ -55,3 +59,21 @@
   }
 }
 
+/* tablet */
+
+@media (min-width: @tablet-width) {
+  .categories__list {
+    display: flex;
+    padding: 0 50px;
+  }
+
+  .categories__item {
+    width: 50%;
+  }
+}
+
+/* desktop */
+
+@media (min-width: @desktop-width) {
+
+}

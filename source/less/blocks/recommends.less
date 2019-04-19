@@ -61,16 +61,57 @@
   min-width: 256px;
   padding-top: 14px;
   padding-bottom: 14px;
+}
 
-  &:hover {
-    color: #ffffff;
+/* tablet */
 
-    background-color: #444444;
+@media (min-width: @tablet-width) {
+  .recommends .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
-  &:active {
-    color: rgba(255, 255, 255, 0.3);
+  .recommends__title {
+    .tablet-header;
 
-    background-color: #444444;
+    margin: 0;
+  }
+
+  .recommends__text {
+    min-width: 642px;
+
+    font-size: 17px;
+  }
+
+  .recommends__list {
+    order: 2;
+  }
+
+  .recommends__btn {
+    order: 1;
+
+    min-width: 171px;
+  }
+
+  .recommends__slider--button {
+    order: 4;
+
+    border: none;
+  }
+}
+
+/* desktop */
+
+@media (min-width: @desktop-width) {
+  .recommends__title {
+    .desktop-header;
+
+    margin-left: 125px;
+  }
+
+  .recommends__text {
+    min-width: 768px;
+    margin-left: 125px;
   }
 }

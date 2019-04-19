@@ -32,3 +32,29 @@
 
   background-color: #f1f1f1;
 }
+
+/* tablet */
+
+@media (min-width: @tablet-width) {
+  .page-main {
+    margin-top: -77px;
+  }
+
+  .page-main__title {
+    .tablet-header;
+
+    width: 495px;
+
+    color: #000000;
+  }
+}
+
+/* desktop */
+
+@media (min-width: @desktop-width) {
+  .page-main__title {
+    .desktop-header;
+
+    width: 615px;
+  }
+}
