@@ -1,31 +1,128 @@
-/*.page-header {
+/* mobile */
+
+.page-header__delivery {
+  display: none;
+}
+
+.page-header__wrapper {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
 
 .page-header__logo {
+  order: -1;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 10px;
+
+  text-align: center;
+
+  border-bottom: @grey-border;
+}
+
+.user-block {
+  .reset;
+
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+.user-block__item {
+  border-bottom: @grey-border;
+}
+
+.user-block__link {
   display: block;
-  height: 35px;
-  padding-left: 116px;
-  padding-top: 22px;
-}
+  padding-top: 27px;
+  padding-bottom: 27px;
 
-.page-header__logo img {
-  width: 86px;
-  height: 35px;
-}
+  font-size: 17px;
+  line-height: 24px;
+  color: #000000;
+  text-align: center;
 
-/* new */
+  &:hover {
+    color: rgba(0, 0, 0, 0.6);
+  }
 
-/*@media (min-width: @tablet-width) {
-  .page-header__logo {
-    height: 88px;
-    padding-left: 51px;
+  &:active {
+    color: rgba(0, 0, 0, 0.3);
   }
 }
 
-@media (min-width: @desktop-width) {
-  .page-header__logo {
-    height: 88px;
+.user-block__link--cart,
+.user-block__link--search {
+  position: relative;
+}
+
+.user-block__icon-cart,
+.user-block__icon-search {
+  position: absolute;
+  top: 30px;
+  left: 60px;
+
+  width: 20px;
+  height: 20px;
+
+  opacity: 0.2;
+}
+
+/* tablet */
+
+@media (min-width: @tablet-width) {
+  .page-header__delivery {
+    display: block;
+    padding-right: 50px;
+
+    font-size: 15px;
+    font-weight: normal;
+    color: #444444;
   }
-}*/
+
+  .user-block__link--search {
+    font-size: 0;
+  }
+
+  .page-header__wrapper {
+    justify-content: space-between;
+    min-width: 768px;
+  }
+
+  .page-header__logo {
+    order: -3;
+    width: 112px;
+    padding-top: 18px;
+    padding-right: 209px;
+    padding-bottom: 18px;
+    padding-left: 50px;
+
+    border-bottom: @grey-border;
+  }
+
+  .user-block {
+    display: flex;
+    order: -2;
+    margin: 0;
+    margin-right: 50px;
+  }
+
+  .user-block__item--search {
+    padding-right: 40px;
+    padding-left: 40px;
+
+    border-left: @grey-border;
+    border-right: @grey-border;
+  }
+
+  .user-block__item--cart {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  .user-block__icon-cart,
+  .user-block__icon-search {
+    top: 40px;
+    left: -10px;
+  }
+}
