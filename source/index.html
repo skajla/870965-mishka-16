@@ -7,6 +7,7 @@
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
   </head>
+
   <body>
     <!-- <header class="page-header">
       <div class="page-header__wrapper">
@@ -71,7 +72,7 @@
             </picture>
           </a>
         </div>
-        <button class="main-nav__toggle " type="button"><span class="visually-hidden">Открыть меню</span></button>
+        <button class="main-nav__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
         <ul class="page-header__user user-block mobile-menu mobile-menu-closed">
           <li class="user-block__item user-block__item--search">
             <a class="user-block__link user-block__link--search" href="#">
@@ -220,17 +221,17 @@
         </a>
         <div class="footer__social social">
           <ul class="social__list">
-            <li class="social__item">
+            <li class="social__item social__item--instagram">
               <a class="social__link social__link--instagram" href="#">
                 <span class="visually-hidden">«Mishka» в Инстаграм</span>
               </a>
             </li>
-            <li class="social__item">
+            <li class="social__item social__item--facebook">
               <a class="social__link social__link--facebook" href="#">
                 <span class="visually-hidden">«Mishka» в Фэйсбук</span>
               </a>
             </li>
-            <li class="social__item">
+            <li class="social__item social__item--twitter">
               <a class="social__link social__link--twitter" href="#">
                 <span class="visually-hidden">«Mishka» в Твиттер</span>
               </a>
@@ -238,13 +239,36 @@
           </ul>
         </div>
         <div class="footer-copyright">
-          <p class="footer-copyright__text">Разработано:</p>
+          <p class="footer-copyright__text">Разработано</p>
           <a class="footer-copyright__link" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">
             <span class="visually-hidden">Разработано HTML Academy</span>
           </a>
         </div>
       </div>
     </footer>
+
+    <section class="modal modal-cart">
+      <h2 class="visually-hidden ">Добавление товара в корзину</h2>
+      <p class="modal-cart__title">Добавить в корзину</p>
+      <p class="modal-cart__description">Выберите размер:</p>
+      <form class="modal-form" action="https://echo.htmlacademy.ru" method="post">
+        <div class="modal-form__size">
+          <label>
+            <input class="modal-form__input visually-hidden" type="radio" name="size" checked>
+            <a class="modal-form__item">S</a>
+          </label>
+          <label>
+            <input class="modal-form__input visually-hidden" type="radio" name="size">
+            <a class="modal-form__item">M</a>
+          </label>
+          <label>
+            <input class="modal-form__input visually-hidden" type="radio" name="size">
+            <a class="modal-form__item">L</a>
+          </label>
+        </div>
+        <button class="modal-form__btn" type="submit" href="#">Добавить</button>
+      </form>
+    </section>
 
     <!-- <script>
         var navMain = document.querySelector('.main-nav');
@@ -293,7 +317,7 @@
               }
           });
 
-//var i = 1+1;
+ //var i = 1+1;
           //navMain.classList.remove('main-nav--nojs');
 
           // navToggle.addEventListener('click', function() {
@@ -306,5 +330,6 @@
           //   }
           // });
         </script>
+
   </body>
 </html>

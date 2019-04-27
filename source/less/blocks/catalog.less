@@ -1,0 +1,56 @@
+/* mobile */
+
+.catalog__wrapper {
+  min-width: 320px;
+  margin: 0 auto;
+
+  background-color: #f1f1f1;
+}
+
+.catalog__title {
+  .mobile-header;
+
+  margin: 0;
+  margin-bottom: 30px;
+  padding-top: 74px;
+  padding-right: 40px;
+  padding-bottom: 74px;
+  padding-left: 40px;
+
+  text-align: center;
+}
+
+/* tablet */
+
+@media (min-width: @tablet-width) {
+  .catalog__wrapper {
+    min-width: 768px;
+  }
+
+  .catalog__title {
+    .tablet-header;
+
+    padding-top: 106px;
+    padding-right: 195px;
+    padding-bottom: 78px;
+    padding-left: 195px;
+  }
+}
+
+/* desktop */
+
+@media (min-width: @desktop-width) {
+  .catalog__wrapper {
+    min-width: 1150px;
+  }
+
+  .catalog__title {
+    .desktop-header;
+
+    margin-bottom: 110px;
+    padding-top: 105px;
+    padding-right: 340px;
+    padding-bottom: 90px;
+    padding-left: 340px;
+  }
+}

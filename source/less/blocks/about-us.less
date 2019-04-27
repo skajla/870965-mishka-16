@@ -31,10 +31,6 @@
 .about-us__list {
   .reset;
 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  min-height: 650px;
   padding-top: 44px;
 
   font-size: 17px;
@@ -43,6 +39,9 @@
 
 .about-us__item {
   position: relative;
+
+  padding-top: 60px;
+  padding-bottom: 20px;
 }
 
 .about-us__item:last-child {
@@ -53,7 +52,7 @@
   .about-us-item-pseudo;
 
   width: 39px;
-  height: 37px;
+  height: 39px;
 
   background-image: url("../img/icon-feature-flower.svg");
 }
@@ -62,7 +61,7 @@
   .about-us-item-pseudo;
 
   width: 47px;
-  height: 27px;
+  height: 30px;
 
   background-image: url("../img/icon-feature-money.svg");
 }
@@ -71,7 +70,7 @@
   .about-us-item-pseudo;
 
   width: 34px;
-  height: 27px;
+  height: 30px;
 
   background-image: url("../img/icon-feature-heart.svg");
 }
@@ -80,7 +79,7 @@
   .about-us-item-pseudo;
 
   width: 35px;
-  height: 34px;
+  height: 35px;
 
   background-image: url("../img/icon-feature-ball.svg");
 }
@@ -113,7 +112,8 @@
   .about-us__list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    align-content: center;
+    padding: 0;
 
     font-size: 20px;
     line-height: 22px;
@@ -121,6 +121,8 @@
 
   .about-us__item {
     width: 50%;
+    padding-top: 60px;
+    padding-bottom: 20px;
   }
 
   .about-us__item--style {
@@ -151,10 +153,18 @@
     padding-top: 0;
     padding-right: 50px;
     padding-bottom: 0;
-    padding-left: 175px;
+    padding-left: 255px;
   }
 
   .about-us__title {
     .desktop-header;
+  }
+
+  .about-us__list {
+    width: 650px;
+  }
+
+  .about-us__item {
+    width: 300px;
   }
 }
