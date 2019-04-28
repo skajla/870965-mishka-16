@@ -1,17 +1,14 @@
 /* mobile */
-
 .page-header__delivery {
   display: none;
 }
 
 .page-header__wrapper {
-  display: flex;
-  flex-wrap: wrap;
   margin: 0 auto;
 }
 
 .page-header__logo {
-  order: -1;
+  display: block;
   width: 100%;
   padding-top: 20px;
   padding-bottom: 10px;
@@ -24,7 +21,6 @@
 .user-block {
   .reset;
 
-  min-width: 320px;
   margin: 0 auto;
 }
 
@@ -71,40 +67,45 @@
 /* tablet */
 
 @media (min-width: @tablet-width) {
-  .page-header__delivery {
-    display: block;
-    padding-right: 50px;
+  .page-header {
+    height: 88px;
 
-    font-size: 15px;
-    font-weight: normal;
-    color: #444444;
-  }
-
-  .user-block__link--search {
-    font-size: 0;
+    border-bottom: @grey-border;
+    background-color: #ffffff;
   }
 
   .page-header__wrapper {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     min-width: 768px;
   }
 
   .page-header__logo {
-    order: -3;
+    order: -2;
     width: 112px;
-    padding-top: 18px;
+    box-sizing: content-box;
+    padding-top: 22px;
     padding-right: 209px;
-    padding-bottom: 18px;
+    padding-bottom: 5px;
     padding-left: 50px;
 
-    border-bottom: @grey-border;
+    border: none;
   }
 
   .user-block {
     display: flex;
-    order: -2;
+    order: -1;
     margin: 0;
-    margin-right: 50px;
+  }
+
+  .user-block__item {
+    border: none;
+  }
+
+  .user-block__link--search {
+    font-size: 0;
+    line-height: 0;
   }
 
   .user-block__item--search {
@@ -115,14 +116,60 @@
     border-right: @grey-border;
   }
 
-  .user-block__item--cart {
-    padding-right: 40px;
-    padding-left: 40px;
+  .user-block__link--cart {
+    padding-top: 36px;
+    padding-right: 50px;
+    padding-left: 83px;
   }
 
-  .user-block__icon-cart,
   .user-block__icon-search {
-    top: 40px;
+    top: 35px;
     left: -10px;
+  }
+
+  .user-block__icon-cart {
+    top: 35px;
+    left: 31px;
+  }
+
+  .page-header__delivery {
+    position: absolute;
+    top: 88px;
+    right: 0;
+
+    display: block;
+    margin: 0;
+    padding-right: 50px;
+    padding-top: 25px;
+
+    font-size: 15px;
+    font-weight: normal;
+    color: #444444;
+  }
+}
+
+/* desktop */
+
+@media (min-width: @desktop-width) {
+  .page-header__wrapper {
+    min-width: 1150px;
+  }
+
+  .page-header__logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 149px;
+    padding-top: 13px;
+    padding-right: 10px;
+    padding-bottom: 13px;
+    padding-left: 10px;
+  }
+
+  .user-block {
+    order: 1;
+
+    height: 88px;
   }
 }
