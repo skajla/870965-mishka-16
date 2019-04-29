@@ -53,7 +53,7 @@
   padding-bottom: 9px;
   padding-left: 38px;
 
-  border: 1px solid #ececec;
+  border: @grey-border;
 }
 
 .recommends__btn {
@@ -67,7 +67,7 @@
 /* tablet */
 
 @media (min-width: @tablet-width) {
-  .recommends .wrapper {
+  .recommends__wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -91,7 +91,6 @@
 
   .recommends__btn {
     order: 1;
-
     min-width: 171px;
   }
 
@@ -108,11 +107,11 @@
   .recommends__title {
     .desktop-header;
 
-    margin-left: 125px;
+    margin-left: 175px;
   }
 
-  .recommends__text {
+  .recommends__list {
     min-width: 768px;
-    margin-left: 125px;
+    margin-left: 175px;
   }
 }
