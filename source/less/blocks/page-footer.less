@@ -1,5 +1,21 @@
+/* mobile */
+
+.page-footer__logo {
+  display: none;
+}
+
 .page-footer {
+  margin-top: 39px;
+
   background-color: #f1f1f1;
+}
+
+.footer__social {
+  margin-right: 30px;
+  margin-left: 30px;
+  padding-bottom: 26px;
+
+  border-bottom: @grey-border;
 }
 
 .social__list {
@@ -7,7 +23,18 @@
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-right: 62px;
+  padding-left: 57px;
+}
+
+.social__item--instagram,
+.social__item--twitter {
+  padding-top: 30px;
+}
+
+.social__item--facebook {
+  padding-top: 25px;
 }
 
 .social__link {
@@ -18,7 +45,7 @@
   width: 22px;
   height: 21px;
 
-  background-image: url("../../img/icon-insta.svg");
+  background-image: url("../img/icon-insta.svg");
   background-repeat: no-repeat;
 }
 
@@ -26,7 +53,7 @@
   width: 15px;
   height: 28px;
 
-  background-image: url("../../img/icon-fb.svg");
+  background-image: url("../img/icon-fb.svg");
   background-repeat: no-repeat;
 }
 
@@ -34,17 +61,23 @@
   width: 23px;
   height: 20px;
 
-  background-image: url("../../img/icon-twitter.svg");
+  background-image: url("../img/icon-twitter.svg");
   background-repeat: no-repeat;
 }
 
 .footer-copyright {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-right: 69px;
+  padding-bottom: 23px;
+  padding-left: 69px;
 }
 
 .footer-copyright__text {
+  margin: 0;
+  padding-top: 28px;
+
   font-size: 19px;
   line-height: 18px;
 }
@@ -52,7 +85,71 @@
 .footer-copyright__link {
   width: 27px;
   height: 34px;
+  margin-top: 23px;
 
-  background-image: url("../../img/logo-htmlacademy.svg");
+  background-image: url("../img/logo-htmlacademy.svg");
   background-repeat: no-repeat;
+}
+
+/* tablet */
+
+@media (min-width: @tablet-width) {
+  .page-footer__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 50px;
+    padding-bottom: 52px;
+  }
+
+  .page-footer__logo {
+    display: block;
+    padding-top: 51px;
+  }
+
+  .footer__social {
+    margin: 0;
+    padding: 0;
+    min-width: 141px;
+
+    border-bottom: none;
+  }
+
+  .social__list {
+    padding: 0;
+  }
+
+  .social__item--instagram,
+  .social__item--twitter {
+    padding-top: 63px;
+  }
+
+  .social__item--facebook {
+    padding-top: 55px;
+  }
+
+  .footer-copyright {
+    padding: 0;
+    min-width: 189px;
+  }
+
+  .footer-copyright__text {
+    padding: 0;
+    padding-top: 64px;
+  }
+
+  .footer-copyright__link {
+    margin-top: 56px;
+  }
+}
+
+/* desktop */
+
+@media (min-width: @desktop-width) {
+  .page-footer__wrapper {
+    width: 1150px;
+    margin: 0 auto;
+  }
 }

@@ -1,21 +1,54 @@
+/* mobile */
+
+.page-main__img {
+  background-color: #f9f9f9;
+  background-image: url("../img/hero-mobile@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
 .page-main__title {
+  display: block;
+  margin: 0 auto;
+  width: 244px;
+  padding-top: 76px;
+  padding-bottom: 120px;
+
   font-size: 27px;
   line-height: 30px;
   color: #010000;
+  text-align: center;
 }
 
-.catalog__title {
-  font-size: 27px;
-  line-height: 30px;
-  color: #000000;
+/* tablet */
 
-  background-color: #f1f1f1;
+@media (min-width: @tablet-width) {
+  .page-main__img {
+    background-image: url("../img/hero-tablet@1x.jpg");
+  }
+
+  .page-main__title {
+    .tablet-header;
+
+    width: 510px;
+    padding-top: 160px;
+    padding-bottom: 370px;
+
+    color: #000000;
+  }
 }
 
-.order-title {
-  font-size: 27px;
-  line-height: 30px;
-  color: #000000;
+/* desktop */
 
-  background-color: #f1f1f1;
+@media (min-width: @desktop-width) {
+  .page-main__img {
+    background-image: url("../img/hero-desktop@1x.jpg");
+  }
+
+  .page-main__title {
+    .desktop-header;
+
+    width: 615px;
+    padding-bottom: 354px;
+  }
 }

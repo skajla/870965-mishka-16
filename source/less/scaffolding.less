@@ -1,25 +1,39 @@
 @font-face {
   font-family: "Open Sans";
-  src: url("../fonts/opensans.woff2") format("woff2"), url("../fonts/opensans.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Open Sans bold";
   src: url("../fonts/opensansbold.woff") format("woff"), url("../fonts/opensansbold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../fonts/opensans.woff2") format("woff2"), url("../fonts/opensans.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
-  font-family: "OpenSans", "Arial", sans-serif;
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+
+  font-family: "Open Sans", "Arial", sans-serif;
   font-size: 15px;
   line-height: 24px;
   color: #000000;
   font-weight: bold;
-
-  background-color: #ffffff;
 }
 
 img {
@@ -44,11 +58,42 @@ a {
   overflow: hidden;
 }
 
+.wrapper {
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+@media (min-width: @tablet-width) {
+  .wrapper {
+    min-width: 768px;
+    padding: 0 50px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .wrapper {
+    width: 1150px;
+  }
+}
+
 .btn {
   font-size: 18px;
   line-height: 20px;
   text-transform: uppercase;
   color: #444444;
+  background-color: #ffffff;
 
   border: 2px solid #444444;
+
+  &:hover {
+    color: #ffffff;
+
+    background-color: #444444;
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+
+    background-color: #444444;
+  }
 }

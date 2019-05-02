@@ -1,19 +1,152 @@
-.nav-list {
-  .reset;
+/* mobile */
 
-  width: 320px;
+.main-nav {
+  position: relative;
+
+  min-width: 320px;
+  margin: 0 auto;
 }
 
-.nav-list__link {
+.main-nav__link {
+  display: block;
+  padding-top: 27px;
+  padding-bottom: 27px;
+
   font-size: 17px;
   line-height: 24px;
   color: #000000;
+  text-align: center;
+
+  border-bottom: @grey-border;
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  &:active {
+    color: rgba(0, 0, 0, 0.3);
+  }
 }
 
-.nav-list__item {
-  padding-top: 32px;
-  padding-bottom: 30px;
-  padding-left: 76px;
+.main-nav__link--arrival,
+.main-nav__link--sale {
+  display: none;
+}
 
-  box-shadow: 0 1px 0 0 #ececec, inset 0 1px 0 0 #ececec;
+.main-nav__toggle {
+  position: absolute;
+  top: 31px;
+  right: 32px;
+  z-index: 2;
+
+  display: block;
+  width: 22px;
+  height: 22px;
+
+  border: none;
+  outline: none;
+}
+
+.mobile-menu-opened .main-nav__toggle {
+  position: absolute;
+  top: 29px;
+  right: 30px;
+  z-index: 2;
+
+  display: block;
+  width: 22px;
+  height: 22px;
+
+  background-color: transparent;
+  background-image: url("../../img/icon-menu-close.svg");
+  background-repeat: no-repeat;
+
+  outline: none;
+}
+
+.mobile-menu-closed .main-nav__toggle {
+  position: absolute;
+  top: 32px;
+  right: 31px;
+  z-index: 2;
+
+  display: block;
+  width: 22px;
+  height: 22px;
+
+  background-color: transparent;
+  background-image: url("../../img/icon-menu-open.svg");
+  background-repeat: no-repeat;
+
+  outline: none;
+}
+
+@media (max-width: @mobile-width-only) {
+  .mobile-menu-closed {
+    display: none;
+  }
+}
+
+/* tablet */
+
+@media (min-width: @tablet-width) {
+  .main-nav__toggle {
+    display: none;
+  }
+
+  .main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 50%;
+    margin: 0;
+    min-width: 400px;
+  }
+
+  .main-nav__link {
+    padding-top: 25px;
+
+    font-size: 15px;
+
+    border: none;
+  }
+
+  .main-nav__link--catalog {
+    padding-right: 15px;
+    // padding-left: 50px;
+  }
+}
+
+/* desktop */
+
+@media (min-width: @desktop-width) {
+  .main-nav {
+    padding-right: 70px;
+  }
+
+  .main-nav__link--catalog {
+    padding-top: 36px;
+    padding-right: 35px;
+    // padding-left: 50px;
+
+    font-size: 17px;
+
+    border-right: @grey-border;
+  }
+
+  .main-nav__link--order {
+    padding-top: 36px;
+    padding-left: 35px;
+
+    font-size: 17px;
+  }
+
+  .main-nav__link--sale,
+  .main-nav__link--arrival {
+    display: block;
+  }
+
+  .main-nav__link--arrival {
+    // padding-left: 50px;
+    padding-right: 60px;
+  }
 }
