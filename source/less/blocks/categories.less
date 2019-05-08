@@ -21,8 +21,8 @@
   width: 70px;
 }
 
-.categories__icon--interior,
-.categories__icon--toys {
+.categories__link--interior svg,
+.categories__link--toys svg {
   position: absolute;
   top: 15px;
   right: 40px;
@@ -61,6 +61,16 @@
   }
 }
 
+.categories__link--interior:hover svg,
+.categories__link--toys:hover svg {
+  opacity: 0.7;
+}
+
+.categories__link--interior:active svg,
+.categories__link--toys:active svg {
+  opacity: 0.3;
+}
+
 /* tablet = desktop */
 
 @media (min-width: @tablet-width) {
@@ -70,5 +80,9 @@
 
   .categories__item {
     width: 50%;
+
+    &:hover {
+      margin-top: -5px;
+    }
   }
 }
