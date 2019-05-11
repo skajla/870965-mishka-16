@@ -48,6 +48,14 @@
 
   font-size: 17px;
   color: #000000;
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  &:active {
+    color: rgba(0, 0, 0, 0.3);
+  }
 }
 
 .product-item__description {
@@ -73,13 +81,18 @@
   margin: 0;
 }
 
-.product-item__buy {
-  display: block;
-  width: 20px;
-  height: 19px;
+.product-item__buy svg {
+  opacity: 0.2;
+}
 
-  background-image: url("../img/icon-cart.svg");
-  background-repeat: no-repeat;
+.product-item__buy:hover svg {
+  opacity: 1;
+
+  fill: #63d1bb;
+}
+
+.product-item__buy:active svg {
+  fill: rgba(99, 209, 187, 0.3);
 }
 
 /* tablet */

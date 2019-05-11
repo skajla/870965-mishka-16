@@ -18,7 +18,7 @@
 
   background-image: url("../img/bg-zigzag-line.svg");
   background-repeat: repeat-x;
-  background-position: top;
+  background-position: 0 0;
   background-size: auto 7px;
 }
 
@@ -104,6 +104,11 @@
 /* tablet */
 
 @media (min-width: @tablet-width) {
+  .about-us::before {
+    height: 16px;
+    background-size: auto 16px;
+  }
+
   .about-us__title {
     .tablet-header;
   }

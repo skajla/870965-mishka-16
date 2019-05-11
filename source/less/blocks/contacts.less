@@ -18,7 +18,7 @@
 
   background-image: url("../img/bg-zigzag-line.svg");
   background-repeat: repeat-x;
-  background-position: top;
+  background-position: 0 0;
   background-size: auto 7px;
 }
 
@@ -105,12 +105,35 @@
 /* tablet */
 
 @media (min-width: @tablet-width) {
+  .contacts::before {
+    height: 16px;
+
+    background-size: auto 16px;
+  }
+
   .contacts__content {
     padding: 0 50px;
   }
 
   .contacts__title {
+    position: relative;
+
     .tablet-header;
+  }
+
+  .contacts__title::after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    right: 50px;
+
+    width: 47px;
+    height: 81px;
+
+    background-image: url("../img/flag.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
   }
 
   .contacts__info {
@@ -151,6 +174,11 @@
 
   .contacts__title {
     .desktop-header;
+  }
+
+  .contacts__title::after {
+    top: 0;
+    left: -90px;
   }
 
   .contacts__info {
