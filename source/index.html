@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png">
   </head>
 
   <body>
@@ -22,14 +23,14 @@
             <img class="page-header__logo-image" src="img/logo-mobile.svg" alt="Логотип интернет-магазина «Mishka»">
           </picture>
         </a>
-        <button class="main-nav__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
-        <nav class="main-nav mobile-menu mobile-menu-closed">
+        <button class="main-nav__toggle main-nav__toggle--close" type="button"><span class="visually-hidden">Открыть меню</span></button>
+        <nav class="main-nav mobile-menu">
           <a class="main-nav__link main-nav__link--catalog" href="catalog.html">Каталог товаров</a>
           <a class="main-nav__link main-nav__link--order" href="form.html">Вязание на заказ</a>
           <a class="main-nav__link main-nav__link--arrival" href="#">Новые поступления</a>
           <a class="main-nav__link main-nav__link--sale" href="#">Распродажа</a>
         </nav>
-        <ul class="page-header__user user-block mobile-menu mobile-menu-closed">
+        <ul class="page-header__user user-block mobile-menu">
           <li class="user-block__item user-block__item--search">
             <a class="user-block__link user-block__link--search" href="#">
               <svg width="18" height="18">
@@ -86,15 +87,15 @@
             <p class="promo__description">Экологически чистая пряжа, ручная работа. Доступны в шести расцветках, и трёх размерах.</p>
             <table class="promo__table">
               <tr>
-                <th class="promo__value">Цвет:</td>
+                <th class="promo__value">Цвет:</th>
                 <td class="promo__field">«Тиффани»‎/серый</td>
               </tr>
               <tr>
-                <th class="promo__value">Диаметр:</td>
+                <th class="promo__value">Диаметр:</th>
                 <td class="promo__field">25 см</td>
               </tr>
               <tr>
-                <th class="promo__value">Высота:</td>
+                <th class="promo__value">Высота:</th>
                 <td class="promo__field">15 см</td>
               </tr>
             </table>
@@ -104,7 +105,7 @@
               <img class="promo__img" src="img/triple-set-mobile@1x.jpg" srcset="img/triple-set-mobile@2x.jpg 2x" alt="Вязаные корзинки">
             </picture>
             <span class="promo__price">Цена: 990 руб.</span>
-            <a href="#" class="promo__btn btn">Заказать</a>
+            <a href="#" class="promo__btn btn cart-link">Заказать</a>
           </div>
         </div>
       </section>
@@ -118,7 +119,7 @@
             <li class="about-us__item about-us__item--likes">Увеличивает лайки на&nbsp;фотографиях</li>
             <li class="about-us__item about-us__item--handmade">Связано вручную с любовью&nbsp;и умилением</li>
             <li class="about-us__item about-us__item--producers">Поддержка отечественного производителя</li>
-            <li class="about-us__item about-us__item--package">Отправляется в подарочной&nbsp;упаковке</li>
+            <li class="about-us__item about-us__item--package">Поставляется в подарочной&nbsp;упаковке</li>
           </ul>
         </div>
       </section>
@@ -128,19 +129,19 @@
           <div class="recommends__wrapper">
             <h2 class="recommends__title">Отзывы</h2>
             <ul class="recommends__list recommends__slider">
-              <li class="recommends__text">Я молодая мама, но всё равно фотографии не набирали и близко такого количества лайков, как у популярных инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке и мои фотографии сразу стали более стильными, а также набирают больше лайков!
+              <li class="recommends__text">Я молодая мама, но всё равно фотографии не набирали и близко такого количества лайков, как у популярных инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке, и&nbsp;мои фотографии сразу стали более стильными, а также набирают больше лайков!
                 <p class="recommends__author">Анастасия Красильникова</p>
                 <span class="recommends__nickname">@misssssiskras</span>
               </li>
             </ul>
             <div class="recommends__slider--button">
-              <a class="recommends__prev" href="#">
+              <a class="recommends__prev" href="prev-recommends.html">
                 <svg width="50" height="26">
                   <use xlink:href="#icon-left-arrow"></use>
                 </svg>
                 <span class="visually-hidden">Предыдущий отзыв</span>
               </a>
-              <a class="recommends__next" href="#">
+              <a class="recommends__next" href="next-recommends.html">
                 <svg width="50" height="26">
                   <use xlink:href="#icon-right-arrow"></use>
                 </svg>
@@ -162,16 +163,14 @@
             </div>
             <div class="contacts__info--address">
               <span class="contacts__info--address-value">адрес:</span>
-              <span class="contacts__info--address-field">г.Санкт-Петербург, ул.&nbsp;Большая Конюшенная, д.&nbsp;19/8,&nbsp;офис 101</span>
+              <span class="contacts__info--address-field">г. Санкт-Петербург, ул.&nbsp;Большая Конюшенная, д.&nbsp;19/8,&nbsp;офис 101</span>
             </div>
           </div>
         </div>
         <div class="contacts__map-wrapper">
-          <a class="contacts__map" href="img/map-mobile@1x.jpg" target="_blank">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6036253002912!2d30.320858715826557!3d59.938719169054494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1555414165690!5m2!1sru!2sru" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-          </a>
+          <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6036253002912!2d30.320858715826557!3d59.938719169054494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1555414165690!5m2!1sru!2sru" style="border:0" allowfullscreen></iframe>
         </div>
-        <a href="#" class="contacts__btn btn">Напишите нам</a>
+        <a href="write-us.html" class="contacts__btn btn">Напишите нам</a>
       </section>
     </main>
 
@@ -223,75 +222,32 @@
       </div>
     </footer>
 
-    <section class="modal modal-cart">
-      <h2 class="visually-hidden ">Добавление товара в корзину</h2>
-      <p class="modal-cart__title">Добавить в корзину</p>
-      <p class="modal-cart__description">Выберите размер:</p>
-      <form class="modal-form" action="https://echo.htmlacademy.ru" method="post">
-        <div class="modal-form__size">
-          <label>
-            <input class="modal-form__input visually-hidden" type="radio" name="size" checked>
-            <a class="modal-form__item">S</a>
-          </label>
-          <label>
-            <input class="modal-form__input visually-hidden" type="radio" name="size">
-            <a class="modal-form__item">M</a>
-          </label>
-          <label>
-            <input class="modal-form__input visually-hidden" type="radio" name="size">
-            <a class="modal-form__item">L</a>
-          </label>
-        </div>
-        <button class="modal-form__btn" type="submit" href="#">Добавить</button>
-      </form>
-    </section>
+    <div class="fullscreen" id="modal-cart__wrapper">
+      <section class="modal modal-cart">
+        <h2 class="visually-hidden">Добавление товара в корзину</h2>
+        <p class="modal-cart__title">Добавить в корзину</p>
+        <p class="modal-cart__description">Выберите размер:</p>
+        <form class="modal-form" action="https://echo.htmlacademy.ru" method="post">
+          <div class="modal-form__size">
+            <label>
+              <input class="modal-form__input visually-hidden" type="radio" name="size" checked>
+              <a class="modal-form__item">S</a>
+            </label>
+            <label>
+              <input class="modal-form__input visually-hidden" type="radio" name="size">
+              <a class="modal-form__item">M</a>
+            </label>
+            <label>
+              <input class="modal-form__input visually-hidden" type="radio" name="size">
+              <a class="modal-form__item">L</a>
+            </label>
+          </div>
+          <button class="modal-form__btn" type="submit">Добавить</button>
+        </form>
+      </section>
+    </div>
 
-    <!-- <script>
-        var navMain = document.querySelector('.main-nav');
-        var navToggle = document.querySelector('.main-nav__toggle');
-
-        navMain.classList.remove('main-nav--nojs');
-
-        navToggle.addEventListener('click', function() {
-          if (navMain.classList.contains('main-nav--closed')) {
-            navMain.classList.remove('main-nav--closed');
-            navMain.classList.add('main-nav--opened');
-          } else {
-            navMain.classList.add('main-nav--closed');
-            navMain.classList.remove('main-nav--opened');
-          }
-        });
-      </script> -->
-
-
-      <script>
-          var navMainElements = document.querySelectorAll('.mobile-menu');
-          var navToggle = document.querySelector('.main-nav__toggle');
-
-          navToggle.addEventListener('click', function() {
-
-              var isOpened = true;
-              for (var i = 0; i < navMainElements.length; i++) {
-                if (navMainElements[i].classList.contains('mobile-menu-closed')) {
-                  isOpened = false;
-                  break;
-                }
-              }
-
-              if (isOpened) {
-                navToggle.classList.add('I_AM_CLOSED');
-                for (var i = 0; i < navMainElements.length; i++) {
-                  navMainElements[i].classList.remove('mobile-menu-opened');
-                  navMainElements[i].classList.add('mobile-menu-closed');
-                }
-              } else {
-                navToggle.classList.remove('I_AM_CLOSED');
-                for (var i = 0; i < navMainElements.length; i++) {
-                  navMainElements[i].classList.add('mobile-menu-opened');
-                  navMainElements[i].classList.remove('mobile-menu-closed');
-                }
-              }
-          });
-        </script>
+    <script src="js/menu-js.js"></script>
+    <script src="js/modal-js.js"></script>
   </body>
 </html>
