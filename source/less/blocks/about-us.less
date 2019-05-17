@@ -3,15 +3,15 @@
 .about-us {
   position: relative;
 
-  padding-top: 54px;
+  padding-top: 70px;
 }
 
 .about-us::before {
   content: "";
 
   position: absolute;
+  top: 35px;
   left: 0;
-  top: 30px;
 
   width: 100%;
   height: 7px;
@@ -24,6 +24,7 @@
 
 .about-us__title {
   margin: 0;
+  margin-bottom: 27px;
 
   font-size: 25px;
   line-height: 30px;
@@ -39,8 +40,8 @@
 .about-us__item {
   position: relative;
 
-  padding-top: 60px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  padding-top: 58px;
 }
 
 .about-us__item:last-child {
@@ -49,6 +50,9 @@
 
 .about-us__item--materials::before {
   .about-us-item-pseudo;
+
+  top: 3px;
+  left: 8px;
 
   width: 39px;
   height: 39px;
@@ -59,6 +63,9 @@
 .about-us__item--style::before {
   .about-us-item-pseudo;
 
+  top: 5px;
+  left: 1px;
+
   width: 47px;
   height: 30px;
 
@@ -67,6 +74,9 @@
 
 .about-us__item--likes::before {
   .about-us-item-pseudo;
+
+  top: 10px;
+  left: 7px;
 
   width: 34px;
   height: 30px;
@@ -77,6 +87,9 @@
 .about-us__item--handmade::before {
   .about-us-item-pseudo;
 
+  top: 7px;
+  left: 3px;
+
   width: 35px;
   height: 35px;
 
@@ -86,6 +99,9 @@
 .about-us__item--producers::before {
   .about-us-item-pseudo;
 
+  top: 8px;
+  left: -6px;
+
   width: 55px;
   height: 23px;
 
@@ -94,6 +110,9 @@
 
 .about-us__item--package::before {
   .about-us-item-pseudo;
+
+  top: 6px;
+  left: 3px;
 
   width: 33px;
   height: 32px;
@@ -105,12 +124,23 @@
 
 @media (min-width: @tablet-width) {
   .about-us::before {
-    height: 16px;
-    background-size: auto 16px;
+    top: 52px;
+    left: 0;
+
+    height: 15px;
+
+    background-size: auto 15px;
+  }
+
+  .about-us {
+    padding-top: 118px;
   }
 
   .about-us__title {
     .tablet-header;
+
+    margin-bottom: 45px;
+    margin-left: -4px;
   }
 
   .about-us__list {
@@ -124,9 +154,10 @@
   }
 
   .about-us__item {
-    width: 50%;
+    width: 300px;
+    margin-right: 33px;
     padding-top: 60px;
-    padding-bottom: 20px;
+    padding-bottom: 25px;
   }
 
   .about-us__item--style {
@@ -153,6 +184,19 @@
 /* desktop */
 
 @media (min-width: @desktop-width) {
+  .about-us {
+    padding-top: 155px;
+  }
+
+  .about-us::before {
+    top: 72px;
+    left: 0;
+
+    height: 23px;
+
+    background-size: auto 23px;
+  }
+
   .about-us__title {
     .desktop-header;
 
@@ -160,7 +204,8 @@
   }
 
   .about-us__list {
-    justify-content: space-between;
+    // justify-content: space-between;
+    width: 700px;
     margin-right: 230px;
     margin-bottom: 13px;
     margin-left: 175px;
@@ -168,5 +213,6 @@
 
   .about-us__item {
     width: 300px;
+    margin-right: 50px;
   }
 }

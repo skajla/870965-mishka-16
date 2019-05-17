@@ -14,17 +14,29 @@
 .categories__link {
   display: block;
   width: 131px;
-  padding-top: 28px;
+  padding-top: 26px;
   // padding-right: 185px;
-  padding-bottom: 28px;
-  padding-left: 29px;
+  padding-bottom: 29px;
+  padding-left: 28px;
 }
 
-.categories__link--interior svg,
+.categories__link--interior svg {
+  position: absolute;
+  top: 23px;
+  right: 37px;
+
+  width: 40px;
+  height: 62px;
+
+  fill: #149080;
+
+  opacity: 0.5;
+}
+
 .categories__link--toys svg {
   position: absolute;
-  top: 15px;
-  right: 40px;
+  top: 21px;
+  right: 27px;
 
   width: 60px;
   height: 60px;
@@ -77,6 +89,9 @@
 @media (min-width: @tablet-width) {
   .categories__list {
     display: flex;
+
+    font-size: 20px;
+    line-height: 30px;
   }
 
   .categories__item {
@@ -88,8 +103,17 @@
   }
 
   .categories__link {
-    padding-top: 35.5px;
-    padding-bottom: 35.5px;
-    padding-left: 36px;
+    padding-top: 28px;
+    padding-bottom: 31px;
+    padding-left: 35px;
+  }
+
+  .categories__link--interior svg {
+    top: 30px;
+  }
+
+  .categories__link--toys svg {
+    top: 30px;
+    right: 35px;
   }
 }

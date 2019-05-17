@@ -1,12 +1,12 @@
 /* mobile */
 
 .recommends {
-  padding-top: 61px;
+  padding-top: 55px;
 }
 
 .recommends__title {
   margin: 0;
-  margin-bottom: 38px;
+  margin-bottom: 24px;
 
   font-size: 25px;
   line-height: 30px;
@@ -24,7 +24,7 @@
 
 .recommends__author {
   margin: 0;
-  margin-top: 40px;
+  margin-top: 25px;
 
   font-size: 17px;
   font-weight: bold;
@@ -41,8 +41,8 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 36px;
-  margin-bottom: 38px;
+  margin-top: 30px;
+  margin-bottom: 36px;
 }
 
 .recommends__prev,
@@ -77,6 +77,10 @@
 /* tablet */
 
 @media (min-width: @tablet-width) {
+  .recommends {
+    padding-top: 33px;
+  }
+
   .recommends .wrapper {
     background-image: url("../img/review@1x.jpg");
     background-position: 0 0;
@@ -86,7 +90,8 @@
   @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     .recommends .wrapper {
       background-image: url("../img/review@2x.jpg");
-      background-size: contain;
+      // background-size: contain;
+      background-size: 350px 457px;
     }
   }
 
@@ -94,20 +99,27 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-top: 50px;
+    padding-top: 77px;
   }
 
   .recommends__title {
     .tablet-header;
 
     margin: 0;
+    margin-left: -4px;
   }
 
   .recommends__text {
     min-width: 642px;
-    margin-top: 53px;
+    margin-top: 45px;
 
     font-size: 17px;
+  }
+
+  .recommends__author {
+    padding-top: 30px;
+
+    font-size: 18px;
   }
 
   .recommends__list {
@@ -117,18 +129,28 @@
 
   .recommends__btn {
     order: 1;
-    min-width: 171px;
+    min-width: 175px;
+    margin-top: 2px;
   }
 
   .recommends__slider--button {
     order: 4;
-    margin-top: -50px;
-    margin-left: 450px;
+    margin-top: -95px;
+    margin-left: 511px;
     margin-bottom: 0;
   }
 
-  .recommends__prev,
+  .recommends__prev {
+    padding: 0;
+    padding-right: 19px;
+
+    border: none;
+  }
+
   .recommends__next {
+    padding: 0;
+    padding-left: 19px;
+
     border: none;
   }
 }
@@ -136,17 +158,23 @@
 /* desktop */
 
 @media (min-width: @desktop-width) {
+  .recommends {
+    padding-top: 26px;
+  }
+
   .recommends .wrapper {
-    background-image: url("../img/review@1x.jpg");
     background-position: 50px 0;
-    background-repeat: no-repeat;
+  }
+
+  .recommends__wrapper {
+    padding-top: 0;
   }
 
   .recommends__title {
     .desktop-header;
 
-    padding-top: 80px;
-    margin-left: 175px;
+    margin-left: 172px;
+    padding-top: 71px;
   }
 
   .recommends__list {
@@ -155,7 +183,13 @@
   }
 
   .recommends__text {
+    margin-right: 105px;
     padding-bottom: 100px;
+  }
+
+  .recommends__author {
+    margin: 0;
+    padding-top: 34px;
   }
 
   .recommends__btn {
@@ -163,7 +197,8 @@
   }
 
   .recommends__slider--button {
-    margin-left: 800px;
+    margin-top: -193px;
     margin-bottom: 0;
+    margin-left: 893px;
   }
 }

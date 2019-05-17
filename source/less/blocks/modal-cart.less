@@ -4,8 +4,6 @@
   position: fixed;
   z-index: 100;
 
-  display: none;
-
   background-color: #ffffff;
 }
 
@@ -13,8 +11,8 @@
   top: 50%;
   left: 50%;
 
-  width: 318px;
-  height: 252px;
+  width: 320px;
+  height: 336px;
   margin-left: -160px;
   margin-top: -168px;
   padding-top: 36px;
@@ -56,23 +54,27 @@
 
 .modal-form__item {
   display: block;
-  width: 78px;
-  height: 30px;
+  width: 82px;
+  height: 52px;
   padding-top: 18px;
 
   font-size: 17px;
   line-height: 16px;
   text-align: center;
 
-  border: 2px solid #ececec;
+  border: 2px solid  rgba(68, 68, 68, 0.1);
 
   &:hover {
     border: 2px solid rgba(68, 68, 68, 0.3);
   }
+
+  &:active {
+    border: 2px solid #62d1ba;
+  }
 }
 
 .modal-form__input:checked + .modal-form__item {
-  border-color: #63d1bb;
+  border-color: #62d1ba;
 }
 
 .modal-form__btn {
@@ -91,13 +93,26 @@
 
   background-color: #63d1bb;
   border: none;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.modal-show {
+  display: block;
 }
 
 /* tablet = desktop */
 
 @media (min-width: @tablet-width) {
   .modal-cart {
-    width: 564px;
+    width: 566px;
+    height: 336px;
     margin-top: -168px;
     margin-left: -284px;
     padding-top: 51px;
@@ -121,8 +136,8 @@
   }
 
   .modal-form__item {
-    width: 108px;
-    height: 30px;
+    width: 112px;
+    height: 52px;
   }
 
   .modal-form__btn {

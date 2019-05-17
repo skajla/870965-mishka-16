@@ -60,10 +60,20 @@
 
 .user-block__link svg {
   position: absolute;
-  top: 30px;
-  left: 60px;
 
   opacity: 0.2;
+}
+
+.user-block__link--search svg {
+  margin-right: 26px;
+  margin-bottom: -4px;
+  margin-left: -64px;
+}
+
+.user-block__link--cart svg {
+  margin-right: 26px;
+  margin-bottom: -4px;
+  margin-left: -43px;
 }
 
 .user-block__link:hover svg {
@@ -103,7 +113,6 @@
     padding-top: 22px;
     padding-right: 209px;
     padding-bottom: 5px;
-    // padding-left: 50px;
 
     border: none;
   }
@@ -116,6 +125,10 @@
 
   .user-block__item {
     border: none;
+  }
+
+  .user-block__link svg {
+    margin: 0;
   }
 
   .user-block__link--search {
@@ -132,8 +145,8 @@
   }
 
   .user-block__link--cart {
-    padding-top: 36px;
-    // padding-right: 50px;
+    padding-top: 31px;
+    padding-bottom: 32px;
     padding-left: 83px;
   }
 
@@ -162,7 +175,7 @@
   .page-header__delivery {
     position: absolute;
     top: 52%;
-    right: 5%;
+    right: 6.5%;
 
     display: block;
     margin: 0;
@@ -188,7 +201,7 @@
     transform: translateX(-50%);
 
     width: 149px;
-    padding-top: 13px;
+    padding-top: 9px;
     padding-right: 10px;
     padding-bottom: 13px;
     padding-left: 10px;
@@ -198,5 +211,13 @@
     order: 1;
 
     height: 88px;
+  }
+
+  .page-header__delivery {
+    top: 52%;
+    right: 4.5%;
+
+    // padding-right: 50px;
+    padding-top: 25px;
   }
 }
