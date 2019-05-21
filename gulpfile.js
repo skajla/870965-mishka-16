@@ -1,13 +1,14 @@
-"use strict";
-
 var gulp = require("gulp");
 var plumber = require("gulp-plumber");
 var sourcemap = require("gulp-sourcemaps");
+var rename = require("gulp-rename");
 var less = require("gulp-less");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
+// var csso = require("gulp-csso");
 var server = require("browser-sync").create();
 
+/* весь CSS: сборка LESS, автопрефиксер и тд и тп */
 gulp.task("css", function () {
   return gulp.src("source/less/style.less")
     .pipe(plumber())
@@ -16,14 +17,22 @@ gulp.task("css", function () {
     .pipe(postcss([
       autoprefixer()
     ]))
+    // .pipe(csso())
+    // .pipe(rename("style-min.css"))
+    // .pipe(cssmin())
     .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("source/css"))
+    .pipe(gulp.dest("build/css"))
     .pipe(server.stream());
 });
 
+
+
+/* Локальный сервер */
+var gulp = require("gulp");
+
 gulp.task("server", function () {
   server.init({
-    server: "source/",
+    server: "build/",
     notify: false,
     open: true,
     cors: true,
@@ -31,99 +40,187 @@ gulp.task("server", function () {
   });
 
   gulp.watch("source/less/**/*.less", gulp.series("css"));
-  gulp.watch("source/*.html").on("change", server.reload);
+  gulp.watch("source/less/**/*.js", gulp.series("jsmin"));
+  gulp.watch("source/css/**/*.css", gulp.series("cssmin"));
+  gulp.watch("source/img/icon-*.svg", gulp.series("sprite", "html", "refresh"));
+  gulp.watch("source/img/icon-feature-*.svg", gulp.series("colorSvgs", "refresh"));
+  gulp.watch("source/img/**/*.{jpg,svg}", gulp.series("images", "refresh"));
+  gulp.watch("source/img/**/*.{png,jpg}", gulp.series("webp", "refresh"));
+  gulp.watch("build/img/icon-*.svg", gulp.series("fillDelete", "refresh"));
+  gulp.watch("source/*.html", gulp.series("html", "refresh"));
 });
 
-gulp.task("start", gulp.series("css", "server"));
+gulp.task("refresh", function(done) {
+  server.reload();
+  done();
+});
+
+// gulp.task("start", gulp.series("build", "server"));
 
 
 
+/* Минификация CSS */
+var gulp = require("gulp");
+var csso = require("gulp-csso");
 
-// var gulp = require('gulp');
-// var imagemin = require('gulp-imagemin');
-// var cheerio = require('gulp-cheerio');
-
-// gulp.task('images', function() {
-//   return gulp.src('source/img/**/*.{jpg,svg}')
-//     .pipe(imagemin([
-//       imagemin.jpegtran({progressive: true}),
-//       imagemin.svgo()
-//     ]))
-//     .pipe(cheerio({
-//       run: function ($) {
-//         $('[fill]').removeAttr('fill');
-//         $('[stroke]').removeAttr('stroke');
-//         $('[style]').removeAttr('style');
-//       },
-//       parserOptions: {xmlMode: true}
-//     }))
-//     .pipe(gulp.dest('source/img'));
-// });
+gulp.task("cssmin", function () {
+  return gulp.src("source/css/**/*.css")
+    .pipe(csso())
+    .pipe(rename({suffix: "-min"}))
+    .pipe(gulp.dest("build/css"));
+});
 
 
 
-var gulp = require('gulp');
-var imagemin = require('gulp-imagemin');
+/* Минификация JS */
+var gulp = require("gulp");
+var uglify = require("gulp-uglify");
 
-gulp.task('images', function() {
-  return gulp.src('source/img/**/*.{jpg,svg}')
+gulp.task("jsmin", function () {
+  return gulp.src("build/js/**/*.js")
+    .pipe(uglify())
+    // .pipe(rename({suffix: "-min"}))
+    .pipe(gulp.dest("build/js"));
+});
+
+
+
+/* Сжатие изображений */
+var gulp = require("gulp");
+var imagemin = require("gulp-imagemin");
+
+gulp.task("images", function() {
+  return gulp.src("source/img/**/*.{jpg,svg}")
     .pipe(imagemin([
       imagemin.jpegtran({progressive: true}),
       imagemin.svgo()
     ]))
-    .pipe(gulp.dest('source/img'));
+    .pipe(gulp.dest("build/img"));
 });
 
 
 
-var gulp = require('gulp');
-var cheerio = require('gulp-cheerio');
-var replace = require('gulp-replace');
+/* Конвертация в WEBP */
+var gulp = require("gulp");
+var webp = require("gulp-webp");
 
-gulp.task('fillDelete', function() {
-  return gulp.src('source/img/icon-*.svg')
+gulp.task("webp", function() {
+  return gulp.src("source/img/**/*.{png,jpg}")
+    .pipe(webp({quality: 90}))
+    .pipe(gulp.dest("build/img"))
+});
+
+
+
+/* Удаление из SVG атрибутов fill, stoke, style */
+var gulp = require("gulp");
+var cheerio = require("gulp-cheerio");
+var replace = require("gulp-replace");
+
+gulp.task("fillDelete", function() {
+  return gulp.src("build/img/icon-*.svg")
     .pipe(cheerio({
       run: function ($) {
-        $('[fill]').removeAttr('fill');
-        $('[stroke]').removeAttr('stroke');
-        $('[style]').removeAttr('style');
+        $("[fill]").removeAttr("fill");
+        $("[stroke]").removeAttr("stroke");
+        $("[style]").removeAttr("style");
       },
       parserOptions: {xmlMode: true}
     }))
-    .pipe(replace('&gt;', '>'))
-    .pipe(gulp.dest('source/img'));
+    .pipe(replace("&gt;", ">"))
+    .pipe(gulp.dest("build/img"));
 });
 
 
 
+/* Окрашивание SVG */
+var gulp = require("gulp");
+var svgFill = require("gulp-svg-fill");
+
+gulp.task("colorSvgs", function() {
+  return gulp.src("build/img/icon-feature-*.svg")
+    .pipe(svgFill({
+      colors: {
+        "seafoam-blue": "#63d1bb",
+      }
+    }))
+    .pipe(gulp.dest("build/img"));
+});
 
 
 
+/* Сборка спрайта */
 var gulp = require("gulp");
 var rename = require("gulp-rename");
 var svgstore = require("gulp-svgstore");
 
 gulp.task("sprite", function () {
-  return gulp.src("source/img/icon-*.svg")
+  return gulp.src("build/img/icon-*.svg")
     .pipe(svgstore({
       inlineSvg: true
     }))
     .pipe(rename("sprite.svg"))
-    .pipe(gulp.dest("source/img/"));
+    .pipe(gulp.dest("build/img/"));
 });
 
 
 
+/* PostHTML */
+var gulp = require("gulp");
+var posthtml = require("gulp-posthtml");
+var include = require("posthtml-include");
 
-var gulp = require('gulp');
-var svgFill = require('gulp-svg-fill');
-
-gulp.task('colorSvgs', function() {
-  return gulp.src('source/img/icon-feature-*.svg')
-    .pipe(svgFill({
-      colors: {
-        'seafoam-blue': '#63d1bb',
-      }
-    }))
-    .pipe(gulp.dest('source/img'));
+gulp.task("html", function () {
+  return gulp.src("source/*.html")
+    .pipe(posthtml([
+      include()
+    ]))
+    .pipe(gulp.dest("build"));
 });
+
+
+
+/* Очищение build перед копированием */
+var gulp = require("gulp");
+var del = require("del");
+
+gulp.task("clean", function () {
+  return del("build");
+});
+
+
+
+/* Копирование в build */
+var gulp = require("gulp");
+
+gulp.task("copy", function () {
+  return gulp.src([
+      "source/fonts/**/*.{woff,woff2}",
+      "source/img/**",
+      "source/js/**"
+    ], {
+      base: "source"
+    })
+  .pipe(gulp.dest("build"));
+});
+
+
+
+/* Запуск сборки */
+var gulp = require("gulp");
+
+gulp.task("build", gulp.series(
+  "clean",
+  "copy",
+  "css",
+  "cssmin",
+  "jsmin",
+  "images",
+  "webp",
+  "fillDelete",
+  "sprite",
+  "html",
+  "colorSvgs"
+));
+
+gulp.task("start", gulp.series("build", "server"));
