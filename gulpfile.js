@@ -5,7 +5,6 @@ var rename = require("gulp-rename");
 var less = require("gulp-less");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
-// var csso = require("gulp-csso");
 var server = require("browser-sync").create();
 
 /* весь CSS: сборка LESS, автопрефиксер и тд и тп */
@@ -17,9 +16,6 @@ gulp.task("css", function () {
     .pipe(postcss([
       autoprefixer()
     ]))
-    // .pipe(csso())
-    // .pipe(rename("style-min.css"))
-    // .pipe(cssmin())
     .pipe(sourcemap.write("."))
     .pipe(gulp.dest("build/css"))
     .pipe(server.stream());
@@ -39,14 +35,10 @@ gulp.task("server", function () {
     ui: false
   });
 
-  gulp.watch("source/less/**/*.less", gulp.series("css"));
-  gulp.watch("source/less/**/*.js", gulp.series("jsmin"));
+  gulp.watch("source/less/**/*.less", gulp.series("css", "refresh"));
+  gulp.watch("source/js/**/*.js", gulp.series("jsmin"));
   gulp.watch("source/css/**/*.css", gulp.series("cssmin"));
   gulp.watch("source/img/icon-*.svg", gulp.series("sprite", "html", "refresh"));
-  gulp.watch("source/img/icon-feature-*.svg", gulp.series("colorSvgs", "refresh"));
-  gulp.watch("source/img/**/*.{jpg,svg}", gulp.series("images", "refresh"));
-  gulp.watch("source/img/**/*.{png,jpg}", gulp.series("webp", "refresh"));
-  gulp.watch("build/img/icon-*.svg", gulp.series("fillDelete", "refresh"));
   gulp.watch("source/*.html", gulp.series("html", "refresh"));
 });
 
@@ -55,8 +47,6 @@ gulp.task("refresh", function(done) {
   done();
 });
 
-// gulp.task("start", gulp.series("build", "server"));
-
 
 
 /* Минификация CSS */
@@ -64,7 +54,7 @@ var gulp = require("gulp");
 var csso = require("gulp-csso");
 
 gulp.task("cssmin", function () {
-  return gulp.src("source/css/**/*.css")
+  return gulp.src("build/css/**/*.css")
     .pipe(csso())
     .pipe(rename({suffix: "-min"}))
     .pipe(gulp.dest("build/css"));
@@ -79,7 +69,6 @@ var uglify = require("gulp-uglify");
 gulp.task("jsmin", function () {
   return gulp.src("build/js/**/*.js")
     .pipe(uglify())
-    // .pipe(rename({suffix: "-min"}))
     .pipe(gulp.dest("build/js"));
 });
 
@@ -197,7 +186,8 @@ gulp.task("copy", function () {
   return gulp.src([
       "source/fonts/**/*.{woff,woff2}",
       "source/img/**",
-      "source/js/**"
+      "source/js/**",
+      "source/normalize-min.css"
     ], {
       base: "source"
     })
