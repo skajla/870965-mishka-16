@@ -7,7 +7,7 @@ var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
 var server = require("browser-sync").create();
 
-/* CSS: сборка LESS, автопрефиксер и тд и тп */
+/* CSS: сборка LESS, автопрефиксер, sourcemap и тд и тп */
 gulp.task("css", function () {
   return gulp.src("source/less/style.less")
     .pipe(plumber())
